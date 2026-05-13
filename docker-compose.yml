@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./bibliaBack 
+    environment:
+      - API_key=${APIkey}
+    ports:
+      - "8081:8080"
+    networks:
+      - biblia-app
+
+  frontend:
+    build: ./bibliaFront 
+    ports:
+      - "4200:80"
+    networks:
+      - biblia-app
+    depends_on:
+      - backend
+
+networks:
+  biblia-app:
+    driver: bridge
