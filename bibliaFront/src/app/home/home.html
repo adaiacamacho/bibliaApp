@@ -1,0 +1,20 @@
+<div class="dropdowns">
+  <select name="versionselect" [(ngModel)]="Sver" (change)="onChangeVer()">
+    <option *ngFor="let version of versiones" [value]="version.id">
+      {{ version.name }}
+    </option>
+  </select>
+  <select name="b" [(ngModel)]="Slibro" (change)="onChangeLibro()">
+    <option *ngFor="let libro of libros" [value]="libro.id">
+      {{ libro.name }}
+    </option>
+  </select>
+  <select name="b" [(ngModel)]="Scap" (change)="onChangeCap()">
+    <option *ngFor="let cap of caps" [value]="cap.number">
+      {{ cap.number }}
+    </option>
+  </select>
+</div>
+<div class="versos" *ngIf="capfull!=null">
+  <div [innerHTML]="capfull"></div>
+</div>

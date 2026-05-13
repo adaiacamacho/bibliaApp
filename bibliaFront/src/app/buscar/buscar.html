@@ -1,0 +1,26 @@
+<div class="buscador">
+  <input type="text"  [(ngModel)]="qry" (keyup.enter)="buscar()" placeholder="Escribe una palabra o frase..." tooltip="Use * para simbolizar palabras o frases (ejem. am*= amor, amado, amorreo,etc) y ? para simbolizar letras individuales (ejem. am?r=amor, amar)">
+  <select name="versionselect" [(ngModel)]="Sver">
+    <option *ngFor="let version of versiones" [value]="version.id">
+      {{ version.name }}
+    </option>
+  </select>
+  
+  <button (click)="buscar()">Buscar</button>
+</div>
+
+<div class="resultados" *ngIf="versos">
+    <div *ngFor="let verso of versos">
+        <small>{{verso.reference}}</small>
+        <p [innerHTML]="verso.text"></p>
+    </div>
+
+    <mat-paginator
+        [length]="total"
+        [pageSize]="limit"
+        [pageIndex]="offset/limit"
+        [hidePageSize]="true"
+        (page)="buscar($event)"
+        aria-label="Seleccionar página">
+    </mat-paginator>
+</div>
