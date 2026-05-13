@@ -1,6 +1,6 @@
 #Biblia App
 
-Esto es un proyecto personal hecho con Springboot y Angular. 
+Esto es un proyecto personal hecho con Springboot y Angular, contenerizado con Docker.
 
 Para iniciarlo, descargue Docker y use el comando docker compose up --build
 
