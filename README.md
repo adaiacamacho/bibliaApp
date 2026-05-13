@@ -4,7 +4,7 @@ Esto es un proyecto personal hecho con Springboot y Angular, contenerizado con D
 
 Para iniciarlo, descargue Docker y use el comando docker compose up --build
 
-Asegúrese de editar el archivo ´.env.example´ con su API key correspondiente.
+Asegúrese de editar el archivo '.env.example' con su API key correspondiente.
 
 Gracias por su atención.
 
